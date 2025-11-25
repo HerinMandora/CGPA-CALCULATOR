@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>CGPA Calculator</h1>
+
+    <!-- Subject Options -->
+    <div class="card">
+        <h2>Subject Options</h2>
+
+        <label>Subject Type</label>
+        <select id="subjectType">
+            <option>Theory</option>
+            <option>Lab</option>
+        </select>
+
+        <label>Calculation Mode</label>
+        <select id="calcMode">
+            <option>CE % (Auto)</option>
+            <option>Final %</option>
+            <option>Required SEE for Target %</option>
+        </select>
+    </div>
+
+    <!-- Marks Input -->
+    <div class="card">
+        <h2>Enter Marks</h2>
+
+        <label>Class Test (20)</label>
+        <input type="number" id="ct" value="0">
+
+        <label>Sessional (50)</label>
+        <input type="number" id="se" value="0">
+
+        <label id="assLabel">Assignment (30)</label>
+        <input type="number" id="ass" value="0">
+
+        <label>LPW % (Lab)</label>
+        <input type="number" id="lpw" value="0">
+
+        <label>SEE %</label>
+        <input type="number" id="see" value="0">
+
+        <label>Target Final %</label>
+        <input type="number" id="targetFinal" value="70">
+
+        <div class="progressGroup">
+            <span>CE Progress</span>
+            <div class="progressBar"><div id="ceBar"></div></div>
+            <span id="ceBarLabel">0%</span>
+        </div>
+
+        <div class="progressGroup">
+            <span>Final Progress</span>
+            <div class="progressBar"><div id="finalBar"></div></div>
+            <span id="finalBarLabel">0%</span>
+        </div>
+
+        <button onclick="showPrediction()" class="blue-btn">SEE Prediction Table</button>
+    </div>
+
+    <!-- Result -->
+    <div class="card">
+        <h2>Result</h2>
+        <textarea id="resultBox" readonly></textarea>
+    </div>
+
+    <!-- Semester CGPA -->
+    <div class="card">
+        <h2>Full Semester CGPA</h2>
+
+        <div class="sem-grid">
+            <div><label>Maths</label><input type="number" id="math" value="0"></div>
+            <div><label>NT</label><input type="number" id="nt" value="0"></div>
+            <div><label>ICC</label><input type="number" id="icc" value="0"></div>
+            <div><label>Eco</label><input type="number" id="eco" value="0"></div>
+            <div><label>DLD</label><input type="number" id="dld" value="0"></div>
+            <div><label>ED</label><input type="number" id="ed" value="0"></div>
+        </div>
+
+        <div class="progressGroup">
+            <span>Semester Progress</span>
+            <div class="progressBar"><div id="semBar"></div></div>
+            <span id="semBarLabel">0%</span>
+        </div>
+
+        <button onclick="calcSemester()" class="green-btn">Calculate Semester CGPA</button>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+        <button onclick="calculate()" class="blue-btn">Calculate</button>
+        <button onclick="resetAll()" class="red-btn">Reset</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

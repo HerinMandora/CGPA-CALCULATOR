@@ -63,5 +63,3 @@ HTML
 CSS (Apple-style theme)
 
 JavaScript (CE, SEE, CGPA logic)
-
-Optional Hosting: Netlify / GitHub Pages
